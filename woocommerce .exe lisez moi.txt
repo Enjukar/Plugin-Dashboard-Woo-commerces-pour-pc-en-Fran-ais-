@@ -1,0 +1,46 @@
+1.Vérifier l'URL de l'API :
+Assurez-vous que l'URL de l'API est correcte. L'URL de base pour l'API WooCommerce devrait ressembler à ceci :
+
+https://votre-site.com/wp-json/wc/v3/
+
+Remarquez le /wp-json/wc/v3/ à la fin, qui est essentiel pour accéder aux points de terminaison de l'API WooCommerce.
+
+2. Points de terminaison de l'API :
+Assurez-vous que vous accédez aux points de terminaison corrects, par exemple :
+
+https://votre-site.com/wp-json/wc/v3/orders
+
+3. Vérifier les clés API :
+Assurez-vous que les clés API sont correctes et ont les permissions nécessaires (lecture/écriture).
+
+4. Télécharger le script
+
+5.Points de Vérification Supplémentaires
+URL de l'API : Assurez-vous que l'URL de votre site WooCommerce est correcte et que le chemin /wp-json/wc/v3/ est valide.
+Clés API : Vérifiez que les clés API ont les permissions nécessaires et sont activées.
+Connectivité : Assurez-vous que votre site WooCommerce est accessible depuis l'endroit où vous exécutez ce script.
+Débogage : Ajoutez des impressions (print) ou des logs pour déboguer et voir les réponses du serveur.
+
+6.Conversion en .exe
+Pour convertir le script en un fichier exécutable Windows (.exe), vous pouvez utiliser PyInstaller.
+
+7. Installez PyInstaller :
+
+pip install pyinstaller
+
+
+8. Créez l'exécutable :
+ pyinstaller --onefile --noconsole script_woocommerce.py
+
+PS. Explications :
+schedule_auto_refresh :
+
+Cette fonction utilise root.after(90000, refresh_orders) pour planifier l'exécution de refresh_orders toutes les 90 secondes (1.5 minutes).
+Appel initial de refresh_orders et schedule_auto_refresh :
+
+refresh_orders() est appelé une première fois pour charger les commandes au démarrage de l'application.
+schedule_auto_refresh() est appelé pour planifier les rafraîchissements automatiques toutes les 90 secondes.
+
+
+ 
+
